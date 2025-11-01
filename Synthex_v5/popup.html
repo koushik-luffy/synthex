@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Synthex v5</title><link rel="stylesheet" href="style.css"></head>
+<body class="theme-glass light">
+  <div class="app">
+    <header class="app-header">
+      <div class="brand"><div class="logo"></div><div class="titles"><div class="title">Synthex</div><div class="subtitle">Synthesis + Index — Clean summaries instantly</div></div></div>
+      <div class="controls"><button id="modeToggle" class="icon">🌗</button></div>
+    </header>
+    <nav class="nav"><button class="nav-btn active" data-tab="mail">✉ Mail</button><button class="nav-btn" data-tab="web">🌐 Web</button><button class="nav-btn" data-tab="focus">🔥 Focus</button></nav>
+    <main class="main">
+      <section id="mail" class="tab">
+        <div class="panel panel-glass panel-grid">
+          <div class="panel-left">
+            <div class="actions"><button id="detectBtn" class="action">🔍 Detect</button><button id="summarizeBtn" class="action primary">✨ Summarize</button><button id="replyBtn" class="action">💬 Reply</button><button id="subjectBtn" class="action">📧 Subjects</button></div>
+            <textarea id="emailText" placeholder="Detected email text or paste here..."></textarea>
+          </div>
+          <div class="panel-right">
+            <div id="status" class="status">Status: ready</div>
+            <div id="mailResult" class="output" role="region" aria-live="polite"></div>
+            <div class="small-row"><select id="tone"><option value="polite">Polite</option><option value="formal">Formal</option><option value="casual">Casual</option><option value="concise">Concise</option></select><select id="variants"><option>1</option><option>2</option><option>3</option></select><button id="copyMail" class="action">Copy</button><button id="clearMail" class="action">Clear</button></div>
+          </div>
+        </div>
+      </section>
+      <section id="web" class="tab" style="display:none">
+        <div class="panel panel-glass single">
+          <div class="web-actions"><button id="summarizePage" class="action primary">✨ Summarize Page</button><button id="fetchSelection" class="action">Use Selection</button><button id="copyWeb" class="action">Copy</button>
+          <p style="margin-bottom: 12px;"></p>
+          </div>
+
+
+
+          <div id="webResult" class="output" role="region" aria-live="polite"></div>
+          <div class="web-chat"><input id="webInput" placeholder="Ask a follow-up question (optional)"/><button id="sendWeb" class="action">Ask</button></div>
+          <div id="webChatBox" class="chat-box" role="region" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="focus" class="tab" style="display:none">
+        <div class="panel panel-glass focus-grid">
+          <div class="motivation"><div class="mot-head"><b>Motivation</b></div><div class="quote" id="quote">Loading quote...</div><div class="affirmation" id="affirmation">Loading affirmation...</div><div class="mot-actions"><button id="newQuote" class="ghost">New Quote</button><button id="regenAff" class="action">Regenerate</button></div></div>
+          <div class="flashcards"><div class="flash-head">Flashcards</div>
+          <div class="gen-row"><input id="fcTopic" placeholder="Topic or paste notes..."/><button id="genCards" class="action">✨ Generate 10</button><button id="genFromPage" class="action">🧠 Generate from Page</button></div>
+          
+
+          <div class="card-stage"><div id="progress" class="progress">0 / 0</div><div class="card-container"><div id="cardWrapper" class="card-wrapper"></div></div><div class="card-controls"><button id="prevCard" class="ghost">Prev</button><button id="flipCard" class="action">Flip</button><button id="nextCard" class="ghost">Next</button><button id="shuffleCards" class="ghost">Shuffle</button></div></div><div class="fc-actions"><button id="exportCards" class="ghost">Export</button><button id="importCards" class="ghost">Import</button><button id="clearAll" class="ghost">Clear All</button></div></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">Synthex © 2025 · Powered by Gemini</footer>
+    <input id="importFile" type="file" accept=".json" style="display:none"/>
+  </div>
+<script src="popup.js"></script>
+</body>
+</html>
